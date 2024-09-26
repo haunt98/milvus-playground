@@ -5,7 +5,7 @@ client = MilvusClient(
 )
 
 collection_name = "maverick"
-dimension = 768
+dimension = 896  # Depends on the model you use
 
 if client.has_collection(collection_name=collection_name):
     print(f"Collection {collection_name} already exists.")
