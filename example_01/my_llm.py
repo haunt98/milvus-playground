@@ -8,8 +8,6 @@ model_name = "Qwen/Qwen2.5-0.5B"
 model = AutoModel.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-model.eval()
-
 print(f"Model {model_name} embedding dimension: {model.config.hidden_size}")
 
 
@@ -20,5 +18,5 @@ def generate_embedding(text):
     with torch.no_grad():
         model_output = model(**encoded_input)
 
-    embedding = model_output.last_hidden_state.mean(dim=1).squeeze().numpy()
+    embedding = model_output.last_hidden_state.mean(dim=1).squeeze().tolist()
     return embedding

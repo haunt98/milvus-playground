@@ -29,3 +29,5 @@ vector_data = [
 
 insert_rsp = client.insert(collection_name=collection_name, data=vector_data)
 print(insert_rsp)
+
+# TODO: Create index

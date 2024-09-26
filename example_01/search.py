@@ -14,7 +14,7 @@ collection_load_state = client.get_load_state(
 print(f"Collection {collection_name} loaded state: {collection_load_state}")
 
 
-query_vectors = generate_embedding("Chính phủ Việt Nam").tolist()
+query_vectors = [generate_embedding("Chính phủ Việt Nam")]
 
 search_rsp = client.search(
     collection_name=collection_name,  # target collection
